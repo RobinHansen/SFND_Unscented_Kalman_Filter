@@ -76,9 +76,12 @@ If you are enrolled, see the project page in the classroom
 for instructions and the project rubric.
 
 ## Notes on the Solution
-To compile: mkdir build; cd build; cmake ..; make
+To compile:
+
+  mkdir build; cd build; cmake ..; make
+
 The file ukf.cpp was modified and the UKF algorithm parts as implemented during the course quizes were re-used.
-When running, the RMSE thresholds (`rmseThreshold` in highway.h) should not be exceeeded - this is the case. Additionally convergence should reached within 1 sec runtime.  Initially - as suggested - an identity matrix was used for matrix P (uncertainty). With this P  this was not the case. 
+When running, the RMSE thresholds (`rmseThreshold` in highway.h) should not be exceeeded - this is the case. Additionally convergence should be reached within 1 sec runtime.  Initially - as suggested - an identity matrix was used for matrix P (uncertainty). Faster convergence was achieved with lower values.
 
 The NIS values are written to two files (NIS_Lidar.csv and NIS_Radar.csv) for subsequent plotting by the Python program `NISplot.py`, e.g. in build directory: ../NISplot.py NIS_Lidar.py 7.81 (requires matplotlib).  The output included below shows a consistent filter, with few values exceeding the 95% chi-square line.
 
